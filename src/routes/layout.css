@@ -1,1 +1,35 @@
 @import 'tailwindcss';
+
+@theme {
+	/* Base surface + text */
+	--color-background: #0a0a0a;
+	--color-foreground: #f5f5f5;
+
+	/* Purple brand color, used for buttons, links, focus rings */
+	--color-primary: #a855f7;
+	--color-primary-foreground: #ffffff;
+
+	/* Dimmer purple, for secondary buttons/backgrounds */
+	--color-secondary: #6d28d9;
+	--color-secondary-foreground: #f5f5f5;
+
+	/* Bright purple, for highlights, badges, hover states */
+	--color-accent: #c084fc;
+	--color-accent-foreground: #0a0a0a;
+
+	/* Low-contrast grays, for disabled/subtle UI */
+	--color-muted: #1a1a1a;
+	--color-muted-foreground: #a1a1aa;
+
+	/* Dividers, input borders */
+	--color-border: #27272a;
+}
+
+body {
+	background-color: var(--color-background);
+	color: var(--color-foreground);
+}
+
+.menu-button {
+    @apply bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground rounded px-4 py-2 font-medium transition-colors 
+}

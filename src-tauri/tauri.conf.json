@@ -12,9 +12,10 @@
   "app": {
     "windows": [
       {
-        "title": "openrcs",
+        "title": "OpenRCS",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "url": "/menu"
       }
     ],
     "security": {
