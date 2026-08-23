@@ -1,5 +1,8 @@
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize)]
 pub struct TrackCircuit {
-    name: String,
+    pub edges: Vec<TrackCircuitId>,
 }
 
-pub struct TrackCircuitId(String);
+pub type TrackCircuitId = String;

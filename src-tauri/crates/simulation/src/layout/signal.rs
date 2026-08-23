@@ -1,4 +1,9 @@
+use crate::layout::track::EdgeEnd;
+use serde::{Deserialize, Serialize};
 
-pub struct Signal {}
+#[derive(Serialize, Deserialize)]
+pub struct Signal {
+    pub approach: EdgeEnd,
+}
 
-pub struct SignalId(String);
+pub type SignalId = String;

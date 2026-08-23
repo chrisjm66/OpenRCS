@@ -1,6 +1,8 @@
 <script lang='ts'>
 	import { goto } from "$app/navigation";
+	import { getLayouts } from "../../../lib/layout";
 
+    const layouts = getLayouts()
 </script>
 
 

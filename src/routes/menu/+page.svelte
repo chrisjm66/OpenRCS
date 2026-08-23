@@ -12,7 +12,7 @@
 	<div class="mt-20 flex max-w-xs flex-col gap-3">
 		<button
 			class="bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground rounded px-4 py-2 font-medium transition-colors"
-			onclick={() => goto('/select-simulation')}
+			onclick={() => goto('/menu/select-simulation')}
 		>
 			Start a Simulation
 		</button>

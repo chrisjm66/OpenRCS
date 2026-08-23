@@ -1,9 +1,11 @@
 use crate::layout::track::EdgeEnd;
+use serde::{Deserialize, Serialize};
 
-pub struct SwitchId(String);
+pub type SwitchId = String;
 
+#[derive(Serialize, Deserialize)]
 pub struct Switch {
-    common: EdgeEnd,
-    normal: EdgeEnd,
-    reverse: EdgeEnd,
+    pub common: EdgeEnd,
+    pub normal: EdgeEnd,
+    pub reverse: EdgeEnd,
 }

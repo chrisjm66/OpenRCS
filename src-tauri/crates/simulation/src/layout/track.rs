@@ -1,36 +1,44 @@
-pub struct TrackNodeId(String);
+use serde::{Deserialize, Serialize};
 
-pub struct TrackEdgeId(String);
+pub type TrackNodeId = String;
 
+#[derive(Serialize, Deserialize)]
 pub struct TrackNode {
-    position: Point,
-    track_type: TrackType,
+    pub position: Point,
+    pub track_type: TrackType,
 }
 
+pub type TrackEdgeId = String;
+
+#[derive(Serialize, Deserialize)]
 pub struct TrackEdge {
-    from: TrackNodeId,
-    to: TrackNodeId,
-    geometry: Vec<Point>,
-    properties: TrackProperties,
-    allows_from_to: bool,
-    allows_to_from: bool,
+    pub from: TrackNodeId,
+    pub to: TrackNodeId,
+    pub geometry: Vec<Point>,
+    pub properties: TrackProperties,
+    pub allows_from_to: bool,
+    pub allows_to_from: bool,
 }
 
+#[derive(Serialize, Deserialize)]
 pub struct TrackProperties {
-    electrified: bool,
-    speed_limit: u32,
+    pub electrified: bool,
+    pub speed_limit: u32,
 }
 
+#[derive(Serialize, Deserialize)]
 pub struct Point {
-    x: f64,
-    y: f64,
+    pub x: f64,
+    pub y: f64,
 }
 
+#[derive(Serialize, Deserialize)]
 pub struct EdgeEnd {
-    node_id: TrackNodeId,
-    edge_id: TrackEdgeId,
+    pub node_id: TrackNodeId,
+    pub edge_id: TrackEdgeId,
 }
 
+#[derive(Serialize, Deserialize)]
 pub enum TrackType {
     Boundary,
     Buffer,
