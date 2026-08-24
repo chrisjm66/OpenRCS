@@ -4,7 +4,7 @@ import { invoke as __TAURI_INVOKE } from "@tauri-apps/api/core";
 
 /** Commands */
 export const commands = {
-	getLayouts: () => __TAURI_INVOKE<SimulationLayout[]>("get_layouts"),
+	getLayouts: () => __TAURI_INVOKE<Scenario[]>("get_layouts"),
 };
 
 /* Types */
@@ -18,13 +18,18 @@ export type Point = {
 	y: number | null,
 };
 
+export type Scenario = {
+	id: string,
+	name: string,
+	description: string,
+	layout: SimulationLayout,
+};
+
 export type Signal = {
 	approach: EdgeEnd,
 };
 
 export type SimulationLayout = {
-	name: string,
-	description: string,
 	track_circuits: { [key in string]: TrackCircuit },
 	signals: { [key in string]: Signal },
 	track_nodes: { [key in string]: TrackNode },

@@ -2,13 +2,8 @@
 use tauri_specta::{collect_commands, Builder};
 #[tauri::command]
 #[specta::specta]
-fn get_layouts() -> Vec<simulation::layout::SimulationLayout> {
-    vec![simulation::layout::test_layout::make_test_layout()]
-}
-
-#[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
+fn get_layouts() -> Vec<simulation::scenario::Scenario> {
+    vec![simulation::scenario::test_scenario::make_test_scenario()]
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]

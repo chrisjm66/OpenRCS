@@ -23,8 +23,6 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Type)]
 pub struct SimulationLayout {
-    pub name: String,
-    pub description: String,
     pub track_circuits: HashMap<TrackCircuitId, TrackCircuit>,
     pub signals: HashMap<SignalId, Signal>,
     pub track_nodes: HashMap<TrackNodeId, TrackNode>,

@@ -1,8 +1,8 @@
 import { invoke } from '@tauri-apps/api/core';
-import type { SimulationLayout } from '../bindings';
+import type { Scenario, SimulationLayout } from '../bindings';
 
-export async function getLayouts(): Promise<SimulationLayout[]> {
-	const layouts = await invoke<SimulationLayout[]>('get_layouts');
+export async function getLayouts(): Promise<Scenario[]> {
+	const layouts = await invoke<Scenario[]>('get_layouts');
 	console.log(layouts);
 
 	return layouts;

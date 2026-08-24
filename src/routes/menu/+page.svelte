@@ -34,7 +34,7 @@
 
 	<button
 		class="rounded bg-primary px-4 py-2 font-medium text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-		onclick={() => exit()}
+		onclick={() => exit(0)}
 	>
 		Exit
 	</button>
