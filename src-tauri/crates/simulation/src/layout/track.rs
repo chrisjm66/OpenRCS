@@ -1,8 +1,9 @@
 use serde::{Deserialize, Serialize};
+use specta::Type;
 
 pub type TrackNodeId = String;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Type)]
 pub struct TrackNode {
     pub position: Point,
     pub track_type: TrackType,
@@ -10,7 +11,7 @@ pub struct TrackNode {
 
 pub type TrackEdgeId = String;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Type)]
 pub struct TrackEdge {
     pub from: TrackNodeId,
     pub to: TrackNodeId,
@@ -20,25 +21,25 @@ pub struct TrackEdge {
     pub allows_to_from: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Type)]
 pub struct TrackProperties {
     pub electrified: bool,
     pub speed_limit: u32,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Type)]
 pub struct Point {
     pub x: f64,
     pub y: f64,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Type)]
 pub struct EdgeEnd {
     pub node_id: TrackNodeId,
     pub edge_id: TrackEdgeId,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Type)]
 pub enum TrackType {
     Boundary,
     Buffer,

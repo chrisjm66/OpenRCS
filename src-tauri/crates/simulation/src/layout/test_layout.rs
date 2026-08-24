@@ -19,6 +19,8 @@ pub fn make_test_layout() -> SimulationLayout {
     let track_edges = create_track_edges();
 
     SimulationLayout {
+        name: String::from("Test"),
+        description: String::from("description"),
         track_circuits: track_circuits,
         signals: signals,
         track_nodes: track_nodes,

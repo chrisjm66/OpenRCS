@@ -2,6 +2,6 @@
 	const { children } = $props();
 </script>
 
-<div class="p-5 h-screen w-screen">
+<div class="h-screen w-screen p-5">
 	{@render children()}
 </div>

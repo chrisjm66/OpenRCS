@@ -5,6 +5,7 @@ pub mod track;
 pub mod track_circuit;
 use std::collections::HashMap;
 use std::fs::File;
+use specta::Type;
 use std::io::BufReader;
 use std::io::BufWriter;
 use track_circuit::TrackCircuit;
@@ -20,8 +21,10 @@ use crate::layout::track::TrackNode;
 use crate::layout::track::TrackNodeId;
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Type)]
 pub struct SimulationLayout {
+    pub name: String,
+    pub description: String,
     pub track_circuits: HashMap<TrackCircuitId, TrackCircuit>,
     pub signals: HashMap<SignalId, Signal>,
     pub track_nodes: HashMap<TrackNodeId, TrackNode>,
