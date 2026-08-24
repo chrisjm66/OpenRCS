@@ -1,17 +1,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { initializeSimulation } from '$lib/simulation.svelte';
+	import { initializeSimulation, loadScenarios, getAvailableScenarios } from '$lib/simulation.svelte';
 	import type { Scenario } from '../../../bindings';
-	import { getLayouts } from '../../../lib/layout';
 
-	let scenarios = $state<Scenario[] | undefined>(undefined);
 	let selectedScenario = $state<Scenario | undefined>();
 
-	async function loadLayouts() {
-		scenarios = await getLayouts();
-	}
-
-	loadLayouts();
+		loadScenarios() // this populates availableScenarios
 </script>
 
 <div class="h-full w-full">
@@ -25,8 +19,8 @@
 
 	<div class="mt-10 flex h-full w-full flex-row">
 		<div class="h-full w-50">
-			{#if scenarios != undefined}
-				{#each scenarios as scenario}
+			{#if getAvailableScenarios() != undefined}
+				{#each getAvailableScenarios() as scenario}
 					<button
 						onclick={() => {
 							selectedScenario = scenario;
@@ -44,7 +38,7 @@
 				<p class="text-lg">{selectedScenario.description}</p>
 				<button
 					class="absolute bottom-5 w-max rounded bg-primary px-4 py-2 font-medium text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-					onclick={() => initializeSimulation(selectedScenario)}
+					onclick={() => initializeSimulation(selectedScenario?.id)}
 					>Start Simulation</button
 				>
 			{/if}
