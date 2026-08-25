@@ -1,23 +1,27 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { initializeSimulation, loadScenarios, getAvailableScenarios } from '$lib/simulation.svelte';
+	import {
+		initializeSimulation,
+		loadScenarios,
+		getAvailableScenarios
+	} from '$lib/simulation.svelte';
 	import type { Scenario } from '../../../bindings';
 
 	let selectedScenario = $state<Scenario | undefined>();
 
-		loadScenarios() // this populates availableScenarios
+	loadScenarios(); // this populates availableScenarios
 </script>
 
-<div class="h-full w-full flex flex-col">
+<div class="flex h-full w-full flex-col">
 	<h1 class="text-2xl font-bold text-white">Select a Simulation</h1>
 	<button
-		class="text-muted-foreground transition-colors text-left w-max hover:text-primary-foreground"
+		class="w-max text-left text-muted-foreground transition-colors hover:text-primary-foreground"
 		onclick={() => goto('/menu')}
 	>
 		Back to menu
 	</button>
 
-	<div class="mt-10 flex h-full w-full flex-row grow">
+	<div class="mt-10 flex h-full w-full grow flex-row">
 		<div class="h-full w-50">
 			{#if getAvailableScenarios() != undefined}
 				{#each getAvailableScenarios() as scenario}
@@ -38,8 +42,7 @@
 				<p class="text-lg">{selectedScenario.description}</p>
 				<button
 					class="absolute bottom-5 w-max rounded bg-primary px-4 py-2 font-medium text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-					onclick={() => initializeSimulation(selectedScenario?.id)}
-					>Start Simulation</button
+					onclick={() => initializeSimulation(selectedScenario?.id)}>Start Simulation</button
 				>
 			{/if}
 		</div>

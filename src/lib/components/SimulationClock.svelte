@@ -1,15 +1,13 @@
-<script lang='ts'>
-	import { getFormattedDate } from "$lib/date";
+<script lang="ts">
+	import { getFormattedDate } from '$lib/date';
 
-    let time = $state(getFormattedDate())
+	let time = $state(getFormattedDate());
 
-    setInterval(() => {
-        time =  getFormattedDate() 
-    }, 1000)
+	setInterval(() => {
+		time = getFormattedDate();
+	}, 1000);
 </script>
 
-
-<div class='bg-gray-800 flex items-center h-full p-2 min-w-25   '>
-
-        <p class='text-red-500 w-full text-center'>{time}</p>
-    </div>
+<div class="flex h-full min-w-25 items-center bg-gray-800 p-2">
+	<p class="w-full text-center text-red-500">{time}</p>
+</div>
