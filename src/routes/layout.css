@@ -33,3 +33,24 @@ body {
 .menu-button {
 	@apply rounded bg-primary px-4 py-2 font-medium text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground;
 }
+
+* {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Places where selection should still work */
+input,
+textarea,
+[contenteditable="true"],
+.selectable,
+pre,
+code {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+img,
+a {
+  -webkit-user-drag: none;
+}

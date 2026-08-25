@@ -1,3 +1,4 @@
+pub mod diagram;
 pub mod layout;
 pub mod scenario;
 

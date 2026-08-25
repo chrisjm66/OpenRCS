@@ -8,10 +8,7 @@ fn get_layouts() -> Vec<simulation::scenario::Scenario> {
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    let builder = Builder::<tauri::Wry>::new()
-        .commands(collect_commands![
-           get_layouts 
-        ]);
+    let builder = Builder::<tauri::Wry>::new().commands(collect_commands![get_layouts]);
 
     #[cfg(debug_assertions)]
     builder

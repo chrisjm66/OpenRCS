@@ -8,16 +8,16 @@
 		loadScenarios() // this populates availableScenarios
 </script>
 
-<div class="h-full w-full">
+<div class="h-full w-full flex flex-col">
 	<h1 class="text-2xl font-bold text-white">Select a Simulation</h1>
 	<button
-		class="text-muted-foreground transition-colors hover:text-primary-foreground"
+		class="text-muted-foreground transition-colors text-left w-max hover:text-primary-foreground"
 		onclick={() => goto('/menu')}
 	>
 		Back to menu
 	</button>
 
-	<div class="mt-10 flex h-full w-full flex-row">
+	<div class="mt-10 flex h-full w-full flex-row grow">
 		<div class="h-full w-50">
 			{#if getAvailableScenarios() != undefined}
 				{#each getAvailableScenarios() as scenario}

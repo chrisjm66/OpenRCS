@@ -3,9 +3,9 @@ pub mod switch;
 pub mod test_layout;
 pub mod track;
 pub mod track_circuit;
+use specta::Type;
 use std::collections::HashMap;
 use std::fs::File;
-use specta::Type;
 use std::io::BufReader;
 use std::io::BufWriter;
 use track_circuit::TrackCircuit;
@@ -42,13 +42,11 @@ impl SimulationLayout {
         Ok(())
     }
 
-    fn load_layout(
-        file_path: &str
-    ) -> Result<SimulationLayout, Box<dyn std::error::Error>> {
-       let file = File::open(file_path)?;
-       let reader = BufReader::new(file);
+    fn load_layout(file_path: &str) -> Result<SimulationLayout, Box<dyn std::error::Error>> {
+        let file = File::open(file_path)?;
+        let reader = BufReader::new(file);
 
-       let layout = serde_json::from_reader(reader)?; 
-       Ok(layout)
+        let layout = serde_json::from_reader(reader)?;
+        Ok(layout)
     }
 }

@@ -1,14 +1,21 @@
 <script lang='ts'>
+	import SimulationCanvas from "$lib/components/SimulationCanvas.svelte";
+	import SimulationTopBar from "$lib/components/SimulationTopBar.svelte";
 	import { getActiveScenario } from "$lib/simulation.svelte";
     const activeScenario = $state(getActiveScenario())
 
 </script>
 
-<div>
-    <h1>sim here</h1>
+<div class="flex flex-col overflow-y-hidden overflow-x-scroll  h-screen w-screen">
     {#if activeScenario}
-    <p>{activeScenario.name}</p>
+
+        <SimulationTopBar/>
+
+        <div class='grow  h-full w-full'>
+            <SimulationCanvas diagram={activeScenario.diagram}/>
+        </div>
+        
     {:else}
-        <p>no scenario</p>
+        <h1>Error: Simulation not loaded.</h1>
     {/if}
 </div>

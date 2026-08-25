@@ -8,6 +8,26 @@ export const commands = {
 };
 
 /* Types */
+export type DiagramPosition = {
+	x: number | null,
+	y: number | null,
+};
+
+export type DiagramSignal = {
+	signal_id: string,
+	position: DiagramPosition,
+};
+
+export type DiagramSwitch = {
+	switch_id: string,
+	position: DiagramPosition,
+};
+
+export type DiagramTrack = {
+	positions: DiagramPosition[],
+	track_circuits: string[],
+};
+
 export type EdgeEnd = {
 	node_id: string,
 	edge_id: string,
@@ -23,10 +43,17 @@ export type Scenario = {
 	name: string,
 	description: string,
 	layout: SimulationLayout,
+	diagram: SignalDiagram,
 };
 
 export type Signal = {
 	approach: EdgeEnd,
+};
+
+export type SignalDiagram = {
+	tracks: DiagramTrack[],
+	signals: DiagramSignal[],
+	switches: { [key in string]: DiagramSwitch },
 };
 
 export type SimulationLayout = {

@@ -2,12 +2,13 @@ use serde::{Deserialize, Serialize};
 use specta::Type;
 pub mod test_scenario;
 
-use crate::layout::SimulationLayout;
+use crate::{diagram::SignalDiagram, layout::SimulationLayout};
 
 #[derive(Serialize, Deserialize, Type)]
 pub struct Scenario {
     id: String,
     name: String,
     description: String,
-    layout: SimulationLayout
+    layout: SimulationLayout,
+    diagram: SignalDiagram,
 }
