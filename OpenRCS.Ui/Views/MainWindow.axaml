@@ -8,7 +8,7 @@
         x:Class="OpenRCS.Views.MainWindow"
         x:DataType="vm:MainViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="OpenRCS.Ui">
+        Title="OpenRCS">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
