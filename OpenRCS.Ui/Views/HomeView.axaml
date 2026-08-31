@@ -2,20 +2,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:OpenRCS.ViewModels"
+             x:DataType="viewModels:HomeViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="OpenRCS.Views.HomeView">
 
-    <StackPanel Margin="20" Spacing="10">
+    <StackPanel Margin="20" Spacing="40">
         <StackPanel>
             <Label FontWeight="Bold" FontSize="36">OpenRCS</Label>
             <Label FontSize="24">Open Source Rail Control Simulator</Label>
         </StackPanel>
 
         <StackPanel Spacing="10" Width="200" HorizontalAlignment="Left">
-            <Button Classes="menu-button">Start a Simulation</Button>
-            <Button Classes="menu-button">Load a Simulation</Button>
-            <Button Classes="menu-button">Settings</Button>
-            <Button Classes="menu-button">Quit</Button>
+            <Button Classes="menu-button" Command="{Binding ClickStartSimulationCommand}">Start a Simulation</Button>
+            <Button Classes="menu-button" Command="{Binding ClickLoadSimulationCommand}">Load a Simulation</Button>
+            <Button Classes="menu-button" Command="{Binding ClickSettingsCommand}">Settings</Button>
+            <Button Classes="menu-button" Command="{Binding ClickQuitCommand}">Quit</Button>
         </StackPanel>
     </StackPanel>
 </UserControl>

@@ -57,6 +57,7 @@
         <Setter Property="Foreground" Value="{DynamicResource OpenRcsForegroundBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsPrimaryBrush}" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="18"></Setter>
         <Setter Property="CornerRadius" Value="4" />
         <Setter Property="Padding" Value="16,8" />
         <Setter Property="FontWeight" Value="Medium" />

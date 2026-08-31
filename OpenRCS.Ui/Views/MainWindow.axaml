@@ -16,5 +16,12 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <views:HomeView/>
+    <Window.DataTemplates>
+        <DataTemplate DataType="vm:HomeViewModel">
+           <views:HomeView /> 
+        </DataTemplate>
+        
+    </Window.DataTemplates>
+    
+    <ContentControl Content="{Binding CurrentPage}"/>
 </Window>
