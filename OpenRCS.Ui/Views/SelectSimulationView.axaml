@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:OpenRCS.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:SelectSimulationViewModel"
+             x:Class="OpenRCS.Views.SelectSimulationView">
+    
+    <StackPanel Spacing="40">
+       <StackPanel Spacing="5">
+           <TextBlock Classes="menu-subtitle">Select a Simulation</TextBlock>
+           <Button Classes="menu-button" HorizontalAlignment="Left" Command="{Binding ClickBackCommand}">Back to Menu</Button>
+       </StackPanel> 
+        
+        <StackPanel>
+            
+        </StackPanel>
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,6 @@
+@OpenRCS.Server_HostAddress = http://localhost:5143
+
+GET {{OpenRCS.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

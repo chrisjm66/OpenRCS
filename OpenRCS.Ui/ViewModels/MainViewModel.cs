@@ -19,12 +19,12 @@ public partial class MainViewModel : ViewModelBase
 
     public void GoHome()
     {
-        // TODO
+        CurrentPage = new HomeViewModel(this);
     }
 
     public void GoStartSimulation()
     {
-       // TODO 
+        CurrentPage = new SelectSimulationViewModel(this);
     }
 
     public void GoLoadSimulation()

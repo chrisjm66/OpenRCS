@@ -7,10 +7,10 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="OpenRCS.Views.HomeView">
 
-    <StackPanel Margin="20" Spacing="40">
+    <StackPanel Spacing="40">
         <StackPanel>
-            <Label FontWeight="Bold" FontSize="36">OpenRCS</Label>
-            <Label FontSize="24">Open Source Rail Control Simulator</Label>
+            <TextBlock Classes="menu-title">OpenRCS</TextBlock>
+            <TextBlock Classes="menu-subtitle">Open Source Rail Control Simulator</TextBlock>
         </StackPanel>
 
         <StackPanel Spacing="10" Width="200" HorizontalAlignment="Left">

@@ -23,5 +23,7 @@
         
     </Window.DataTemplates>
     
-    <ContentControl Content="{Binding CurrentPage}"/>
+    <StackPanel Margin="20">
+        <ContentControl Content="{Binding CurrentPage}"/>
+    </StackPanel>
 </Window>
