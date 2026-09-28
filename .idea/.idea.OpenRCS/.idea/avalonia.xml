@@ -4,10 +4,13 @@
     <option name="projectPerEditor">
       <map>
         <entry key="OpenRCS.Ui/App.axaml" value="OpenRCS.Ui/OpenRCS.Ui.csproj" />
+        <entry key="OpenRCS.Ui/Controls/SimulationCanvas.axaml" value="OpenRCS.Ui/OpenRCS.Ui.csproj" />
+        <entry key="OpenRCS.Ui/Controls/SimulationController.axaml" value="OpenRCS.Ui/OpenRCS.Ui.csproj" />
         <entry key="OpenRCS.Ui/Styles/OpenRcsTheme.axaml" value="OpenRCS.Ui/OpenRCS.Ui.csproj" />
         <entry key="OpenRCS.Ui/Views/HomeView.axaml" value="OpenRCS.Ui/OpenRCS.Ui.csproj" />
         <entry key="OpenRCS.Ui/Views/MainWindow.axaml" value="OpenRCS.Ui/OpenRCS.Ui.csproj" />
         <entry key="OpenRCS.Ui/Views/SelectSimulationView.axaml" value="OpenRCS.Ui/OpenRCS.Ui.csproj" />
+        <entry key="OpenRCS.Ui/Views/SimulationView.axaml" value="OpenRCS.Ui/OpenRCS.Ui.csproj" />
         <entry key="OpenRCS/App.axaml" value="OpenRCS/OpenRCS.csproj" />
         <entry key="OpenRCS/Views/MainWindow.axaml" value="OpenRCS/OpenRCS.csproj" />
       </map>

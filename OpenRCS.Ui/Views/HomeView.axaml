@@ -7,6 +7,8 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="OpenRCS.Views.HomeView">
 
+    
+    
     <StackPanel Spacing="40">
         <StackPanel>
             <TextBlock Classes="menu-title">OpenRCS</TextBlock>
@@ -14,6 +16,11 @@
         </StackPanel>
 
         <StackPanel Spacing="10" Width="200" HorizontalAlignment="Left">
+            <StackPanel.Styles>
+                <Style Selector="Button">
+                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                </Style>
+            </StackPanel.Styles>
             <Button Classes="menu-button" Command="{Binding ClickStartSimulationCommand}">Start a Simulation</Button>
             <Button Classes="menu-button" Command="{Binding ClickLoadSimulationCommand}">Load a Simulation</Button>
             <Button Classes="menu-button" Command="{Binding ClickSettingsCommand}">Settings</Button>

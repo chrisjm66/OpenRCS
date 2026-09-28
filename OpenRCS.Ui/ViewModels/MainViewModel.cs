@@ -3,12 +3,13 @@ using System.Diagnostics;
 using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Core.Scenario;
 
 namespace OpenRCS.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-    
+
     [ObservableProperty]
     private ViewModelBase _currentPage;
 
@@ -29,12 +30,17 @@ public partial class MainViewModel : ViewModelBase
 
     public void GoLoadSimulation()
     {
-       // TODO 
+        // TODO 
+    }
+
+    public void GoSimulation(Scenario scenario)
+    {
+        CurrentPage = new SimulationViewModel(this, scenario);
     }
 
     public void GoSettings()
     {
-       // TODO 
+        // TODO 
     }
 
 }

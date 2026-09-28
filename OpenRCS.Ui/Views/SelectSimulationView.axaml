@@ -3,8 +3,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:OpenRCS.ViewModels"
+             xmlns:scenario="clr-namespace:Core.Scenario;assembly=OpenRCS.Core"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:DataType="vm:SelectSimulationViewModel"
+             x:Name="Root"
              x:Class="OpenRCS.Views.SelectSimulationView">
     
     <StackPanel Spacing="40">
@@ -13,8 +15,24 @@
            <Button Classes="menu-button" HorizontalAlignment="Left" Command="{Binding ClickBackCommand}">Back to Menu</Button>
        </StackPanel> 
         
-        <StackPanel>
-            
+        <StackPanel Width="300" HorizontalAlignment="Left">
+            <ItemsControl ItemsSource="{Binding Scenarios}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Classes="menu-button"
+                                HorizontalAlignment="Stretch"
+                                Margin="0,0,0,8"
+                                Command="{Binding #Root.DataContext.ClickScenarioCommand}"
+                                CommandParameter="{Binding}">
+                            <StackPanel Spacing="3">
+                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Opacity="0.72" />
+                            </StackPanel>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </StackPanel>
+        
     </StackPanel>
 </UserControl>
