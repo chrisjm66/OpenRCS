@@ -6,6 +6,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>Core</RootNamespace>
+        <!-- Add to all projects/libraries in use, to ensure AOT compatibility -->
+        <IsAotCompatible>true</IsAotCompatible>
     </PropertyGroup>
 
 </Project>

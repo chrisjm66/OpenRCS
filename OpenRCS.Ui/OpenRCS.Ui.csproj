@@ -9,6 +9,11 @@
         <RuntimeIdentifiers>win-x64;osx-x64;osx-arm64;linux-x64</RuntimeIdentifiers>
         <PublishSingleFile Condition="'$(RuntimeIdentifier)' != ''">true</PublishSingleFile>
         <IncludeNativeLibrariesForSelfExtract Condition="'$(RuntimeIdentifier)' != ''">true</IncludeNativeLibrariesForSelfExtract>
+        <!-- Only needed for the main executable project -->
+        <PublishAot>true</PublishAot>
+
+        <!-- Add to all projects/libraries in use, to ensure AOT compatibility -->
+        <IsAotCompatible>true</IsAotCompatible>
     </PropertyGroup>
 
     <ItemGroup>

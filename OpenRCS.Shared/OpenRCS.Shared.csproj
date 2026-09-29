@@ -5,6 +5,8 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <!-- Add to all projects/libraries in use, to ensure AOT compatibility -->
+        <IsAotCompatible>true</IsAotCompatible>
     </PropertyGroup>
 
 </Project>

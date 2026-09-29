@@ -1,30 +1,25 @@
-using System;
-using System.Diagnostics.CodeAnalysis;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using OpenRCS.ViewModels;
+using OpenRCS.Views;
 
 namespace OpenRCS;
 
 /// <summary>
-///     Given a view model, returns the corresponding view if possible.
+///     Maps view models to their views without reflection so published, trimmed builds remain reliable.
 /// </summary>
-[RequiresUnreferencedCode(
-    "Default implementation of ViewLocator involves reflection which may be trimmed away.",
-    Url = "https://docs.avaloniaui.net/docs/concepts/view-locator")]
 public class ViewLocator : IDataTemplate
 {
     public Control? Build(object? param)
     {
-        if (param is null)
-            return null;
-
-        var name = param.GetType().FullName!.Replace("ViewModel", "View", StringComparison.Ordinal);
-        var type = Type.GetType(name);
-
-        if (type != null) return (Control)Activator.CreateInstance(type)!;
-
-        return new TextBlock { Text = "Not Found: " + name };
+        return param switch
+        {
+            HomeViewModel => new HomeView(),
+            SelectSimulationViewModel => new SelectSimulationView(),
+            SimulationViewModel => new SimulationView(),
+            null => null,
+            _ => new TextBlock { Text = $"No view is registered for {param.GetType().Name}." }
+        };
     }
 
     public bool Match(object? data)
