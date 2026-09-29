@@ -1,6 +1,4 @@
 using System;
-using System.Net.Mime;
-using Avalonia;
 using CommunityToolkit.Mvvm.Input;
 
 namespace OpenRCS.ViewModels;

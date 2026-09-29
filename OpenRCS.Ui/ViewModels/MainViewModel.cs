@@ -1,17 +1,11 @@
-using System;
-using System.Diagnostics;
-using Avalonia.Controls;
 using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using Core.Scenario;
 
 namespace OpenRCS.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-
-    [ObservableProperty]
-    private ViewModelBase _currentPage;
+    [ObservableProperty] private ViewModelBase _currentPage;
 
     public MainViewModel()
     {
@@ -42,5 +36,4 @@ public partial class MainViewModel : ViewModelBase
     {
         // TODO 
     }
-
 }

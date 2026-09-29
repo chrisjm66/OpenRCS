@@ -7,6 +7,10 @@
     <Canvas x:Name="DiagramCanvas"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
-            Background="#101522"
-            ClipToBounds="True"/>
+            Background="Black"
+            PointerPressed="OnDiagramPointerPressed"
+            PointerMoved="OnDiagramPointerMoved"
+            PointerReleased="OnDiagramPointerReleased"
+            PointerCaptureLost="OnDiagramPointerCaptureLost"
+            PointerWheelChanged="OnDiagramPointerWheelChanged" />
 </UserControl>

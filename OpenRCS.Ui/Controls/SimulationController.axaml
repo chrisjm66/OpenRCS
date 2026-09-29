@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="OpenRCS.Controls.SimulationController">
-    <StackPanel FlowDirection="LeftToRight" Margin="5">
-        <TextBlock>Hi</TextBlock>
-    </StackPanel>
+    <Border Background="Black" Padding="16,10">
+        <TextBlock x:Name="ClockText" HorizontalAlignment="Right" FontWeight="SemiBold" />
+    </Border>
 </UserControl>

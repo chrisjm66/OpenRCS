@@ -4,27 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:OpenRCS.ViewModels"
              x:DataType="viewModels:HomeViewModel"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1120" d:DesignHeight="720"
              x:Class="OpenRCS.Views.HomeView">
+    <Grid RowDefinitions="*,Auto">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Spacing="28">
+            <StackPanel Spacing="8">
+                <TextBlock Classes="page-title">OpenRCS</TextBlock>
+                <TextBlock Classes="page-subtitle" FontSize="17">Open-source rail control simulator</TextBlock>
+            </StackPanel>
 
-    
-    
-    <StackPanel Spacing="40">
-        <StackPanel>
-            <TextBlock Classes="menu-title">OpenRCS</TextBlock>
-            <TextBlock Classes="menu-subtitle">Open Source Rail Control Simulator</TextBlock>
+            <StackPanel Spacing="8">
+                <TextBlock Classes="muted">Choose a route to open its live control diagram.</TextBlock>
+                <Button Classes="primary-button" HorizontalAlignment="Stretch" Command="{Binding ClickStartSimulationCommand}">Start a simulation</Button>
+                <Button Classes="secondary-button" HorizontalAlignment="Stretch" Command="{Binding ClickLoadSimulationCommand}">Load a simulation</Button>
+                <Button Classes="secondary-button" HorizontalAlignment="Stretch" Command="{Binding ClickSettingsCommand}">Settings</Button>
+            </StackPanel>
         </StackPanel>
 
-        <StackPanel Spacing="10" Width="200" HorizontalAlignment="Left">
-            <StackPanel.Styles>
-                <Style Selector="Button">
-                    <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                </Style>
-            </StackPanel.Styles>
-            <Button Classes="menu-button" Command="{Binding ClickStartSimulationCommand}">Start a Simulation</Button>
-            <Button Classes="menu-button" Command="{Binding ClickLoadSimulationCommand}">Load a Simulation</Button>
-            <Button Classes="menu-button" Command="{Binding ClickSettingsCommand}">Settings</Button>
-            <Button Classes="menu-button" Command="{Binding ClickQuitCommand}">Quit</Button>
-        </StackPanel>
-    </StackPanel>
+        <DockPanel Grid.Row="1" LastChildFill="False">
+            <TextBlock Classes="muted" DockPanel.Dock="Left">Control workstation</TextBlock>
+            <Button Classes="secondary-button" DockPanel.Dock="Right" Padding="12,6" Command="{Binding ClickQuitCommand}">Quit</Button>
+        </DockPanel>
+    </Grid>
 </UserControl>

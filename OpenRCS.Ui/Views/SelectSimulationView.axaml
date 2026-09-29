@@ -3,36 +3,49 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:OpenRCS.ViewModels"
-             xmlns:scenario="clr-namespace:Core.Scenario;assembly=OpenRCS.Core"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1120" d:DesignHeight="720"
              x:DataType="vm:SelectSimulationViewModel"
              x:Name="Root"
              x:Class="OpenRCS.Views.SelectSimulationView">
-    
-    <StackPanel Spacing="40">
-       <StackPanel Spacing="5">
-           <TextBlock Classes="menu-subtitle">Select a Simulation</TextBlock>
-           <Button Classes="menu-button" HorizontalAlignment="Left" Command="{Binding ClickBackCommand}">Back to Menu</Button>
-       </StackPanel> 
-        
-        <StackPanel Width="300" HorizontalAlignment="Left">
-            <ItemsControl ItemsSource="{Binding Scenarios}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Button Classes="menu-button"
-                                HorizontalAlignment="Stretch"
-                                Margin="0,0,0,8"
-                                Command="{Binding #Root.DataContext.ClickScenarioCommand}"
-                                CommandParameter="{Binding}">
-                            <StackPanel Spacing="3">
-                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
-                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Opacity="0.72" />
-                            </StackPanel>
-                        </Button>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+    <Grid RowDefinitions="Auto,*" RowSpacing="28">
+        <StackPanel Spacing="10">
+            <TextBlock Classes="page-title">Choose a simulation</TextBlock>
+            <TextBlock Classes="page-subtitle">Select a route to inspect its layout before opening the control diagram.</TextBlock>
+            <Button Classes="secondary-button" HorizontalAlignment="Left" Padding="12,6" Command="{Binding ClickBackCommand}">Back to menu</Button>
         </StackPanel>
-        
-    </StackPanel>
+
+        <Grid Grid.Row="1" ColumnDefinitions="350,28,*" MinHeight="0">
+            <Border Grid.Column="0" Classes="panel" Padding="8">
+                <ItemsControl ItemsSource="{Binding Scenarios}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Classes="menu-button"
+                                    HorizontalAlignment="Stretch"
+                                    Margin="0,0,0,4"
+                                    Command="{Binding #Root.DataContext?.ClickScenarioCommand}"
+                                    CommandParameter="{Binding}">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="{Binding Name}" FontSize="16" />
+                                    <TextBlock Text="{Binding Description}" Classes="muted" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Border>
+
+            <Border Grid.Column="2" Classes="panel" Padding="28"
+                    DataContext="{Binding SelectedScenario}"
+                    IsVisible="{Binding $self.DataContext, Converter={x:Static ObjectConverters.IsNotNull}}">
+                <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="14">
+                    <TextBlock Text="{Binding Name}" Classes="section-title" />
+                    <TextBlock Grid.Row="1" Text="{Binding Description}" Classes="page-subtitle" TextWrapping="Wrap" />
+                    <StackPanel Grid.Row="3" Spacing="10">
+                        <TextBlock Classes="muted">The diagram opens with a fitted view. Use the wheel to zoom and right-drag to pan.</TextBlock>
+                        <Button Classes="primary-button" HorizontalAlignment="Left" Command="{Binding #Root.DataContext?.ClickStartSimulationCommand}">Open simulation</Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
 </UserControl>

@@ -3,27 +3,21 @@
         xmlns:vm="using:OpenRCS.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:views="clr-namespace:OpenRCS.Views"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1120" d:DesignHeight="720"
         x:Class="OpenRCS.Views.MainWindow"
         x:DataType="vm:MainViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="OpenRCS">
+        Icon="/Assets/openrcs.ico"
+        Title="OpenRCS"
+        MinWidth="900"
+        MinHeight="600"
+        Width="1120"
+        Height="720">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <Window.DataTemplates>
-        <DataTemplate DataType="vm:HomeViewModel">
-           <views:HomeView /> 
-        </DataTemplate>
-        
-    </Window.DataTemplates>
-    
-    <StackPanel Margin="20">
-        <ContentControl Content="{Binding CurrentPage}"/>
-    </StackPanel>
+    <Border Padding="32">
+        <ContentControl Content="{Binding CurrentPage}" />
+    </Border>
 </Window>

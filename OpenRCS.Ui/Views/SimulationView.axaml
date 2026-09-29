@@ -4,15 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:OpenRCS.Controls"
              xmlns:viewModels="clr-namespace:OpenRCS.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1120" d:DesignHeight="720"
              x:DataType="viewModels:SimulationViewModel"
              x:Class="OpenRCS.Views.SimulationView">
-    <Grid RowDefinitions="Auto,Auto,*" RowSpacing="12">
-        <controls:SimulationController Grid.Row="0"/>
-        <StackPanel Grid.Row="1" Spacing="3">
-            <TextBlock Text="{Binding Title}" Classes="menu-subtitle" />
-            <TextBlock Text="{Binding Description}" Opacity="0.72" />
-        </StackPanel>
-        <controls:SimulationCanvas Grid.Row="2" Scenario="{Binding Scenario}" />
+    <Grid RowDefinitions="Auto,*" RowSpacing="0">
+        <controls:SimulationController Grid.Row="0" />
+        <controls:SimulationCanvas Grid.Row="1" Scenario="{Binding Scenario}" />
     </Grid>
 </UserControl>

@@ -1,97 +1,121 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- Shared visual tokens, matching the original OpenRCS Tauri UI. -->
+    <!-- A restrained control-room palette: diagram state is more prominent than chrome. -->
     <Styles.Resources>
-        <Color x:Key="OpenRcsBackgroundColor">#FF0A0A0A</Color>
-        <Color x:Key="OpenRcsForegroundColor">#FFF5F5F5</Color>
+        <Color x:Key="OpenRcsBackgroundColor">#FF0E121B</Color>
+        <Color x:Key="OpenRcsSurfaceColor">#FF171720</Color>
+        <Color x:Key="OpenRcsRaisedSurfaceColor">#FF20202B</Color>
+        <Color x:Key="OpenRcsForegroundColor">#FFF1F5F9</Color>
+        <Color x:Key="OpenRcsSecondaryForegroundColor">#FFAEBCCD</Color>
         <Color x:Key="OpenRcsPrimaryColor">#FFA855F7</Color>
-        <Color x:Key="OpenRcsSecondaryColor">#FF6D28D9</Color>
+        <Color x:Key="OpenRcsPrimaryHoverColor">#FFC084FC</Color>
         <Color x:Key="OpenRcsAccentColor">#FFC084FC</Color>
-        <Color x:Key="OpenRcsMutedColor">#FF1A1A1A</Color>
-        <Color x:Key="OpenRcsMutedForegroundColor">#FFA1A1AA</Color>
-        <Color x:Key="OpenRcsBorderColor">#FF27272A</Color>
+        <Color x:Key="OpenRcsPositiveColor">#FF43B982</Color>
+        <Color x:Key="OpenRcsBorderColor">#FF34303F</Color>
+        <Color x:Key="OpenRcsCanvasColor">#FF101722</Color>
 
         <SolidColorBrush x:Key="OpenRcsBackgroundBrush" Color="{DynamicResource OpenRcsBackgroundColor}" />
+        <SolidColorBrush x:Key="OpenRcsSurfaceBrush" Color="{DynamicResource OpenRcsSurfaceColor}" />
+        <SolidColorBrush x:Key="OpenRcsRaisedSurfaceBrush" Color="{DynamicResource OpenRcsRaisedSurfaceColor}" />
         <SolidColorBrush x:Key="OpenRcsForegroundBrush" Color="{DynamicResource OpenRcsForegroundColor}" />
+        <SolidColorBrush x:Key="OpenRcsSecondaryForegroundBrush" Color="{DynamicResource OpenRcsSecondaryForegroundColor}" />
         <SolidColorBrush x:Key="OpenRcsPrimaryBrush" Color="{DynamicResource OpenRcsPrimaryColor}" />
-        <SolidColorBrush x:Key="OpenRcsSecondaryBrush" Color="{DynamicResource OpenRcsSecondaryColor}" />
+        <SolidColorBrush x:Key="OpenRcsPrimaryHoverBrush" Color="{DynamicResource OpenRcsPrimaryHoverColor}" />
         <SolidColorBrush x:Key="OpenRcsAccentBrush" Color="{DynamicResource OpenRcsAccentColor}" />
-        <SolidColorBrush x:Key="OpenRcsMutedBrush" Color="{DynamicResource OpenRcsMutedColor}" />
-        <SolidColorBrush x:Key="OpenRcsMutedForegroundBrush" Color="{DynamicResource OpenRcsMutedForegroundColor}" />
+        <SolidColorBrush x:Key="OpenRcsPositiveBrush" Color="{DynamicResource OpenRcsPositiveColor}" />
         <SolidColorBrush x:Key="OpenRcsBorderBrush" Color="{DynamicResource OpenRcsBorderColor}" />
+        <SolidColorBrush x:Key="OpenRcsCanvasBrush" Color="{DynamicResource OpenRcsCanvasColor}" />
     </Styles.Resources>
 
     <Style Selector="Window">
         <Setter Property="Background" Value="{DynamicResource OpenRcsBackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource OpenRcsForegroundBrush}" />
         <Setter Property="FontFamily" Value="avares://Avalonia.Fonts.Inter/Assets#Inter" />
+        <Setter Property="FontSize" Value="14" />
     </Style>
 
     <Style Selector="TextBlock">
         <Setter Property="Foreground" Value="{DynamicResource OpenRcsForegroundBrush}" />
     </Style>
 
-    <Style Selector="Label">
-        <Setter Property="Foreground" Value="{DynamicResource OpenRcsForegroundBrush}" />
+    <Style Selector="TextBlock.page-title">
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="LetterSpacing" Value="-0.4" />
     </Style>
 
-    <Style Selector="TextBlock.menu-title">
-        <Setter Property="FontSize" Value="24" />
-        <Setter Property="FontWeight" Value="Bold" />
-    </Style>
-
-    <Style Selector="TextBlock.menu-subtitle">
+    <Style Selector="TextBlock.section-title">
         <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="SemiBold" />
     </Style>
 
-    <Style Selector="TextBlock.muted">
-        <Setter Property="Foreground" Value="{DynamicResource OpenRcsMutedForegroundBrush}" />
+    <Style Selector="TextBlock.page-subtitle, TextBlock.muted">
+        <Setter Property="Foreground" Value="{DynamicResource OpenRcsSecondaryForegroundBrush}" />
     </Style>
 
-    <Style Selector="Label.muted">
-        <Setter Property="Foreground" Value="{DynamicResource OpenRcsMutedForegroundBrush}" />
+    <Style Selector="Border.panel">
+        <Setter Property="Background" Value="{DynamicResource OpenRcsSurfaceBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+    <Style Selector="Button">
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Padding" Value="14,9" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style Selector="Button.primary-button">
+        <Setter Property="Background" Value="{DynamicResource OpenRcsPrimaryBrush}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsPrimaryBrush}" />
+    </Style>
+
+    <Style Selector="Button.primary-button:pointerover">
+        <Setter Property="Background" Value="{DynamicResource OpenRcsPrimaryHoverBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsPrimaryHoverBrush}" />
+    </Style>
+
+    <Style Selector="Button.secondary-button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource OpenRcsForegroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsBorderBrush}" />
+    </Style>
+
+    <Style Selector="Button.secondary-button:pointerover">
+        <Setter Property="Background" Value="{DynamicResource OpenRcsRaisedSurfaceBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsAccentBrush}" />
     </Style>
 
     <Style Selector="Button.menu-button">
-        <Setter Property="Background" Value="{DynamicResource OpenRcsPrimaryBrush}" />
+        <Setter Property="Background" Value="{DynamicResource OpenRcsRaisedSurfaceBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource OpenRcsForegroundBrush}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsPrimaryBrush}" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="FontSize" Value="18"></Setter>
-        <Setter Property="CornerRadius" Value="4" />
-        <Setter Property="Padding" Value="16,8" />
-        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsBorderBrush}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Padding" Value="16,13" />
     </Style>
 
     <Style Selector="Button.menu-button:pointerover">
-        <Setter Property="Background" Value="{DynamicResource OpenRcsAccentBrush}" />
+        <Setter Property="Background" Value="#FF30213F" />
         <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsAccentBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource OpenRcsBackgroundBrush}" />
     </Style>
 
-    <Style Selector="Button.menu-button:pressed">
-        <Setter Property="Background" Value="{DynamicResource OpenRcsSecondaryBrush}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsSecondaryBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource OpenRcsForegroundBrush}" />
-    </Style>
-
-    <Style Selector="Button.menu-button:focus-visible">
+    <Style Selector="Button:focus-visible">
         <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsAccentBrush}" />
         <Setter Property="BorderThickness" Value="2" />
     </Style>
 
-    <Style Selector="Button.menu-button:disabled">
-        <Setter Property="Background" Value="{DynamicResource OpenRcsMutedBrush}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsMutedBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource OpenRcsMutedForegroundBrush}" />
+    <Style Selector="Button:disabled">
+        <Setter Property="Opacity" Value="0.48" />
     </Style>
 
     <Style Selector="TextBox">
-        <Setter Property="Background" Value="{DynamicResource OpenRcsMutedBrush}" />
+        <Setter Property="Background" Value="{DynamicResource OpenRcsSurfaceBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource OpenRcsForegroundBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource OpenRcsBorderBrush}" />
-        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="CornerRadius" Value="0" />
     </Style>
 
     <Style Selector="TextBox:focus">

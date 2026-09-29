@@ -9,7 +9,7 @@
     </Application.DataTemplates>
 
     <Application.Styles>
-        <FluentTheme/>
+        <FluentTheme />
         <StyleInclude Source="avares://OpenRCS.Ui/Styles/OpenRcsTheme.axaml" />
     </Application.Styles>
 </Application>
