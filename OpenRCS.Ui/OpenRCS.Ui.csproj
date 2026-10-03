@@ -25,6 +25,7 @@
 
     <ItemGroup>
         <ProjectReference Include="../OpenRCS.Core/OpenRCS.Core.csproj"/>
+        <ProjectReference Include="../OpenRCS.Server/OpenRCS.Server.csproj"/>
         <PackageReference Include="Avalonia" Version="12.1.1"/>
         <PackageReference Include="Avalonia.Desktop" Version="12.1.1"/>
         <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.1"/>

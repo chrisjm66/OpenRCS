@@ -17,7 +17,5 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <Border Padding="32">
-        <ContentControl Content="{Binding CurrentPage}" />
-    </Border>
+    <ContentControl Content="{Binding CurrentPage}" />
 </Window>

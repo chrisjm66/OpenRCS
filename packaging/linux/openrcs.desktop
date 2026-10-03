@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=OpenRCS
+Comment=OpenRCS desktop simulation
+Exec=openrcs
+Icon=openrcs
+Terminal=false
+Categories=Game;Simulation;
