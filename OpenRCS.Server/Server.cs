@@ -49,11 +49,13 @@ public class Server
     public void StartServerAsync()
     {
         app.RunAsync();
+        Console.WriteLine($"Server started at {DateTime.Now}");
     }
 
     public void StopServerAsync()
     {
         app.StopAsync();
+        Console.WriteLine($"Server stopped at {DateTime.Now}");
     }
 
     internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)

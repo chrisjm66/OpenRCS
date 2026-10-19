@@ -137,22 +137,6 @@ public partial class SimulationCanvas : UserControl
             ? Color.Parse("#FF43B982")
             : Color.Parse("#FFEA6A73");
 
-        var mast = new Line
-        {
-            StartPoint = new Point(position.X, position.Y + 11 * scale),
-            EndPoint = new Point(position.X, position.Y + 28 * scale),
-            Stroke = new SolidColorBrush(Color.Parse("#FF344155")),
-            StrokeThickness = 2.5,
-            IsHitTestVisible = false
-        };
-        var housingSize = 18 * scale;
-        var housing = new Ellipse
-        {
-            Width = housingSize,
-            Height = housingSize,
-            Fill = new SolidColorBrush(Color.Parse("#FF101722")),
-            IsHitTestVisible = false
-        };
         var lampSize = 8 * scale;
         var lamp = new Ellipse
         {
@@ -161,12 +145,8 @@ public partial class SimulationCanvas : UserControl
             Fill = new SolidColorBrush(aspect),
             IsHitTestVisible = false
         };
-        Canvas.SetLeft(housing, position.X - housingSize / 2);
-        Canvas.SetTop(housing, position.Y - housingSize / 2);
         Canvas.SetLeft(lamp, position.X - lampSize / 2);
         Canvas.SetTop(lamp, position.Y - lampSize / 2);
-        DiagramCanvas.Children.Add(mast);
-        DiagramCanvas.Children.Add(housing);
         DiagramCanvas.Children.Add(lamp);
     }
 
